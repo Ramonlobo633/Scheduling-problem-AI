@@ -2,9 +2,7 @@ import scheduling as s, constraints as c
 
 class hill_climb_technique:
     def __ini__(self):
-        self.vector = []
-        self.indice = 0
-
+        
     def hc(self, allocation, nurses=10):
         current_conflits = c.conflits(allocation, nurses)
         s.output('Inicial state', allocation, current_conflits, nurses)
