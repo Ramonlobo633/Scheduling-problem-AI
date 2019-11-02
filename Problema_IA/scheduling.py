@@ -24,7 +24,7 @@ class Technique:
             sa.sahc(self.allocation, self.nurses)
 
         elif self.option == 3:
-            print('Executing Best first search')
+            print('Executing Best First search')
             bf = BreadthFirstSearch.BreadthFirst(self.number)
             bf.bfs()
     
