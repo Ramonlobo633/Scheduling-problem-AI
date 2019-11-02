@@ -19,12 +19,12 @@ class Technique:
             
 
         elif self.option == 2:
-            print('Executing Breadth-First Search to %d queens' % self.number)
-            bf = BreadthFirstSearch.BreadthFirst(self.number)
-            bf.bfs()
+            print('Executing Steepest ascent hill climbing')
+            sa = steepest_ascent_hill_climbing.steepest_ascent_hill_climb_technique()
+            sa.sahc(self.allocation, self.nurses)
 
         elif self.option == 3:
-            print('Executing Breadth-First Search to %d queens' % self.number)
+            print('Executing Best first search')
             bf = BreadthFirstSearch.BreadthFirst(self.number)
             bf.bfs()
     
