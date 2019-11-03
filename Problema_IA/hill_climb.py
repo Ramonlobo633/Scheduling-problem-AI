@@ -27,18 +27,18 @@ class hill_climb_technique:
                     s.output('Last best state found', last_state, current_conflits, nurses)
                     return
 
-                allocation, bit_position = s.state_generator(last_state, bit_position, nurses)
-                current_conflits = c.conflits(allocation, nurses)
+                last_state, bit_position = s.state_generator(last_state, bit_position, nurses)
+                current_conflits = c.conflits(last_state, nurses)
                 
                 if current_conflits < last_conflit:
                     state_loop = False
                     bit_position = 0
 
             if current_conflits == 0:
-                s.output('Objective state found', allocation, current_conflits, nurses)
+                s.output('Objective state found', last_state, current_conflits, nurses)
                 return
 
-            s.output('State generated', allocation, current_conflits, nurses)
+            s.output('State generated', last_state, current_conflits, nurses)
 
             last_conflit = current_conflits
             last_state = allocation
