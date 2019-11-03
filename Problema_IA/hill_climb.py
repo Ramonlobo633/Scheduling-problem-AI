@@ -33,7 +33,7 @@ class hill_climb_technique:
                 if current_conflits < last_conflit:
                     state_loop = False
                     bit_position = 0
-
+                last_conflit = current_conflits
             if current_conflits == 0:
                 s.output('Objective state found', last_state, current_conflits, nurses)
                 return
