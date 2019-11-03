@@ -49,7 +49,7 @@ class best_first_search_technique:
             if current_conflits == 0:
                 s.output('Objective state found', target_state, c.conflits(best_state, nurses), nurses)
                 return
-     
+            s.output('Last best state found', best_state, c.conflits(best_state, nurses), nurses)
             return    
 
            
