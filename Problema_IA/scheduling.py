@@ -1,6 +1,6 @@
 import hill_climb, steepest_ascent_hill_climbing, best_first_search
 
-
+#class que recebe a informação da tecnica escolhida e executa a tecnica, realizando o alocamento
 class Technique:
     def __init__(self, allocation, nurses=10):
         self.option = 0 
@@ -28,13 +28,14 @@ class Technique:
             bf = BreadthFirstSearch.BreadthFirst(self.number)
             bf.bfs()
     
-    
+#função para printar de forma menos poluida a saída do programa
 def output(title, allocation, conflits, nurses_number=10):
     print(title)
     for i in range(0, 21*nurses_number, 21):
         print(allocation[i:(i + 21)])
     print('Number of violated restrictions: ', conflits, '\n')
 
+#Gerador de estado usado pelas tecnicas de busca
 def state_generator(state, bit, nurses_number=10):
     new_state = state[0:bit]
     if state[bit] == '0':

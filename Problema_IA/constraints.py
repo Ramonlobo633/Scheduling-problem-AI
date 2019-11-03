@@ -6,7 +6,7 @@ def crie_matriz(n_linhas, n_colunas, valor):
             linha.append(valor)
         matriz.append(linha)
     return matriz
-
+#função que conta todas as violações de restrições de um determinado estado
 def conflits(allocation, nurses):
     total_conflits = 0
     total_conflits += conflitsr1(allocation, nurses)
