@@ -2,7 +2,7 @@ import scheduling as s, constraints as c
 
 class steepest_ascent_hill_climb_technique:
     def __ini__(self):
-        #variável que garante que todas as operações foram realizadas
+        
         self.bit_position = 0
     def sahc(self, allocation, nurses=10):      
 
@@ -31,7 +31,7 @@ class steepest_ascent_hill_climb_technique:
                     return
                 current_state, bit_position = s.state_generator(current_state, bit_position, nurses)
                 current_conflits = c.conflits(current_state, nurses)
-                
+                 
                 if current_conflits == 0:
                     s.output('Objective state found', current_state, current_conflits, nurses)
                     return

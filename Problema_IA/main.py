@@ -1,6 +1,5 @@
 import random as r, scheduling
 
-#Gerador de estado aleatório
 def random_state(nurses):
     state = ''
     for i in range(0, 21*nurses):
@@ -12,7 +11,7 @@ option = 1
 opt = 0
 
 print('Scheduling nurse problem')
-#colhendo as informações para processamento futuro
+
 while option != 0:
     nurses = 10
     print('Choose a number of nurse:')

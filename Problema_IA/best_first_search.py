@@ -2,7 +2,7 @@ import scheduling as s, constraints as c
 
 class best_first_search_technique:
     def __ini__(self):
-        #variável que garante que todas as operações foram realizadas
+        
         self.bit_position = 0
     def bfs(self, allocation, nurses=10):      
 
@@ -29,7 +29,7 @@ class best_first_search_technique:
                     print('There is no new operators to be applied')
                     s.output('Last best state found', target_state, current_conflits, nurses)
                     return
-                    
+
                 current_state, bit_position = s.state_generator(current_state, bit_position, nurses)
                 current_conflits = c.conflits(current_state, nurses)
                 

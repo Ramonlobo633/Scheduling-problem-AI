@@ -2,7 +2,7 @@ import scheduling as s, constraints as c
 
 class hill_climb_technique:
     def __ini__(self):
-        #variável que garante que todas as operações foram realizadas
+       
         self.bit_position = 0
 
     def hc(self, allocation, nurses=10):
