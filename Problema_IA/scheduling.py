@@ -25,8 +25,8 @@ class Technique:
 
         elif self.option == 3:
             print('Executing Best First search')
-            bf = BreadthFirstSearch.BreadthFirst(self.number)
-            bf.bfs()
+            bfs = best_first_search.best_first_search_technique()
+            bfs.bfs(self.allocation, self.nurses)
     
 def output(title, allocation, conflits, nurses_number=10):
     print(title)
