@@ -4,42 +4,47 @@ class steepest_ascent_hill_climb_technique:
     def __ini__(self):
        
     def sahc(self, allocation, nurses=10):         
-        current_conflits = c.conflits(allocation, nurses)
+        
         s.output('Inicial state', allocation, current_conflits, nurses)
         
         bit_position = 0
+        initial_state = allocation
+        current_conflits = c.conflits(inicial_state, nurses)
+
         if(current_conflits == 0):
             s.output('Objective state found ', allocation, current_conflits, nurses)
             return 
 
-        last_state = allocation
-        last_conflit = current_conflits
+        current_state = inicial_state
+        target_conflits = current_conflits
 
         while True:              
             loop = True
 
             while loop:
 
-                if bit_position == nurses:
-                    print('There is no new operators to be applied')
-                    s.output('Last best state found', last_state, current_conflits, nurses)
-                    return
-
-                allocation, bit_position = s.state_generator(last_state, bit_position, nurses)
-                current_conflits = c.conflits(allocation, nurses)
                 
-                if current_conflits < last_conflit:
-                    state_loop = False
+                
+                current_state, bit_position = s.state_generator(current_state, bit_position, nurses)
+                current_conflits = c.conflits(current_state, nurses)
+                
+                if current_conflits == 0:
+                    s.output('Objective state found', current_state, current_conflits, nurses)
+                    return
+                elif current_conflits < target_conflits:
+                    target_state = current_state
+                else:
+                    current_state = target_state
+
+                if bit_position == nurses:
                     bit_position = 0
+                    loop = False
 
             if current_conflits == 0:
                 s.output('Objective state found', allocation, current_conflits, nurses)
                 return
 
-            s.output('State generated', allocation, current_conflits, nurses)
-
-            last_conflit = current_conflits
-            last_state = allocation
+           
                             
                             
 
