@@ -49,18 +49,20 @@ while option != 0:
     print('4 - Quit')
 
     option = int(input())
+   
     s = scheduling.Technique(allocation, nurses)
+
     if option == 1:
         print('Running Hill Climb technique')
         s.controller(1)
 
-    elif option == 2:
-        print('Running Best-First Search technique')
-        s.controller(2)
-
     elif option == 3:
-        print('Running Stochastic Hill Climbing technique')
+        print('Running Best-First Search technique')
         s.controller(3)
+
+    elif option == 2:
+        print('Running Stochastic Hill Climbing technique')
+        s.controller(2)
 
     elif option == 4:
         print('Exiting')
