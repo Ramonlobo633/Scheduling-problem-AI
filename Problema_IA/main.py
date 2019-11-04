@@ -46,7 +46,8 @@ while option != 0:
     print('1 - Hill Climb')
     print('2 - Steepest-Ascent Hill Climbing')
     print('3 - Best-First Search')
-    print('4 - Quit')
+    print('4 - Genetic algorithm technique')
+    print('5 - Quit')
 
     option = int(input())
    
@@ -65,6 +66,10 @@ while option != 0:
         s.controller(2)
 
     elif option == 4:
+        print('Running Genetic algorithm technique')
+        s.controller(4)
+
+    elif option == 5:
         print('Exiting')
         option = 0
     else:

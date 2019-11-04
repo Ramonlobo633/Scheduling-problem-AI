@@ -1,4 +1,4 @@
-import hill_climb, steepest_ascent_hill_climbing, best_first_search
+import hill_climb, steepest_ascent_hill_climbing, best_first_search, genetic_algorithm
 
 
 class Technique:
@@ -27,6 +27,10 @@ class Technique:
             print('Executing Best First search')
             bfs = best_first_search.best_first_search_technique()
             bfs.bfs(self.allocation, self.nurses)
+        
+        elif self.option == 4:
+            print('Executing Genetic algorithm')
+            genetic_algorithm.ga(self.allocation, self.nurses)
     
 def output(title, allocation, conflits, nurses_number=10):
     print(title)
